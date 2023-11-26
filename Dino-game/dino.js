@@ -28,6 +28,7 @@ export function updateDino(delta, speedScale) {
   handleRun(delta, speedScale)
   handleJump(delta)
 }
+//delta is the frame time(already declared in script.js
 
 export function getDinoRect() {
   return dinoElem.getBoundingClientRect()
@@ -50,6 +51,7 @@ function handleRun(delta, speedScale) {
   }
   currentFrameTime += delta * speedScale
 }
+//following are the conditions specified for jump
 
 function handleJump(delta) {
   if (!isJumping) return
