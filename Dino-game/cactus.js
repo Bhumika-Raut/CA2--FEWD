@@ -8,6 +8,7 @@ const SPEED = 0.05
 const CACTUS_INTERVAL_MIN = 500
 const CACTUS_INTERVAL_MAX = 2000
 const worldElem = document.querySelector("[data-world]")
+// Above is for cactus distance 
 
 let nextCactusTime
 export function setupCactus() {
@@ -15,6 +16,8 @@ export function setupCactus() {
   document.querySelectorAll("[data-cactus]").forEach(cactus => {
     cactus.remove()
   })
+  // We don't want cactus to get gathered once it is been skiped, so we removed it
+
 }
 
 export function updateCactus(delta, speedScale) {
@@ -39,6 +42,7 @@ export function getCactusRects() {
   })
 }
 
+
 function createCactus() {
   const cactus = document.createElement("img")
   cactus.dataset.cactus = true
@@ -51,4 +55,5 @@ function createCactus() {
 function randomNumberBetween(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
+//interval between two cactus is specifief
 
